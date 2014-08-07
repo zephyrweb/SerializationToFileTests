@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ProtoBuf;
 
 namespace SerializationToFiles.Dtos
@@ -26,7 +27,6 @@ namespace SerializationToFiles.Dtos
         public string String6 { get; set; }
         [ProtoMember(9)]
         public string String7 { get; set; }
-
         [ProtoMember(10)]
         public double Double1 { get; set; }
         [ProtoMember(11)]
@@ -56,6 +56,9 @@ namespace SerializationToFiles.Dtos
         public int Int6 { get; set; }
         [ProtoMember(24)]
         public int Int7 { get; set; }
+        [ProtoMember(25) ]
+        public Double[] RanDoubles { get; set; }
+        
     }
 }
 

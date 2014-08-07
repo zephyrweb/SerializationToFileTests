@@ -32,7 +32,7 @@ namespace SerializationToFiles.Serializers
                 stopwatchRead.ElapsedMilliseconds,
                 length);
 
-            //File.Delete(filePath);
+            File.Delete(filePath);
         }
 
         private static long WriteServiceStackJson(string path)

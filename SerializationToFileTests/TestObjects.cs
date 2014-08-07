@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SerializationToFiles.Dtos;
 
 namespace SerializationToFiles
@@ -13,6 +14,15 @@ namespace SerializationToFiles
         private static SimpleTransferProtobuf CreateSimpleTransferProtobuf(int amountOfChildren)
         {
             const string test100Chars = "qwertzuiop1234567890qwertzuiop1234567890qwertzuiop1234567890qwertzuiop1234567890qwertzuiop12345667890";
+
+            var num = 1000;
+            var randNums = new Double[num];
+            var rand = new Random();
+            for (int i = 0; i < num; i++)
+            {
+                randNums[i] = rand.NextDouble() * 100;
+            }
+            
             var simpleTransferProtobuf = new SimpleTransferProtobuf
             {
                 String1 = test100Chars,
@@ -35,6 +45,8 @@ namespace SerializationToFiles
                 Double5 = 55555.55,
                 Double6 = 6666.666666,
                 Double7 = 7.7777777,
+                RanDoubles = randNums,
+
                 SimpleChildTransferProtobufObject = CreateSimpleChildTransferProtobuf(),
                 SimpleChildTransferProtobufList = new List<SimpleChildTransferProtobuf>()
             };

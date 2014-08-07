@@ -22,17 +22,17 @@ namespace SerializationToFiles.Serializers
             stopwatchRead.Stop();
             stopwatchTotal.Stop();
 
-            ExcelResultsReadAndWrite.AppendFormat("{0}", stopwatchTotal.ElapsedMilliseconds);
-            ExcelResultsRead.AppendFormat("{0}", stopwatchRead.ElapsedMilliseconds);
-            ExcelResultsWrite.AppendFormat("{0}", stopwatchWrite.ElapsedMilliseconds);
-            ExcelResultsSize.AppendFormat("{0}", length);
+            ExcelResultsReadAndWrite.AppendFormat("{0},", stopwatchTotal.ElapsedMilliseconds);
+            ExcelResultsRead.AppendFormat("{0},", stopwatchRead.ElapsedMilliseconds);
+            ExcelResultsWrite.AppendFormat("{0},", stopwatchWrite.ElapsedMilliseconds);
+            ExcelResultsSize.AppendFormat("{0},", length);
 
             Console.WriteLine("DotNet Xml \t\t R/W:{0} \t R:{2} \t W:{1} \t Size:{3}",
                 stopwatchTotal.ElapsedMilliseconds, stopwatchWrite.ElapsedMilliseconds,
                 stopwatchRead.ElapsedMilliseconds,
                 length);
 
-            //File.Delete(filePath);
+            File.Delete(filePath);
         }
 
         private static long WriteDotNetXml(string path)

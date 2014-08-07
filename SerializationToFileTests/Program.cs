@@ -28,10 +28,10 @@ namespace SerializationToFiles
             FileAccess.ExcelResultsSize = new StringBuilder();
 
             FileAccess.AmountOfChildObjects = amount;
-            FileAccess.ExcelResultsReadAndWrite.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml" + Environment.NewLine);
-            FileAccess.ExcelResultsRead.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml" + Environment.NewLine);
-            FileAccess.ExcelResultsWrite.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml" + Environment.NewLine);
-            FileAccess.ExcelResultsSize.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml" + Environment.NewLine);
+            FileAccess.ExcelResultsReadAndWrite.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml, MsgPack" + Environment.NewLine);
+            FileAccess.ExcelResultsRead.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml, MsgPack" + Environment.NewLine);
+            FileAccess.ExcelResultsWrite.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml, MsgPack" + Environment.NewLine);
+            FileAccess.ExcelResultsSize.Append("Protobuf, Newtonsoft Json,Newtonsoft Bson, ServiceStack Json, .Net Xml, MsgPack" + Environment.NewLine);
 
             while (_counter < repeatTest)
             {
@@ -41,6 +41,7 @@ namespace SerializationToFiles
                 FileAccessNewtonsoftBson.WriteReadNewtonsoftFileBson("./bsonNewtonsoft.txt");
                 FileAccessServiceStackJson.WriteReadServiceStackJson("./serviceStackJson.txt");
                 FileAccessDotNetXml.WriteReadDotNetXml("./dotnetXml.txt");
+                FileAccessMsgPack.WriteReadNewtonsoftFileJson("./msgPack.txt");
 
                 FileAccess.ExcelResultsReadAndWrite.Append(Environment.NewLine);
                 FileAccess.ExcelResultsRead.Append(Environment.NewLine);
